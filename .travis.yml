@@ -1,3 +1,11 @@
+branches:
+    only:
+        - master
+        - next-major
+        - next-minor
+        - next-patch
+        - tmp
+
 matrix:
     include:
         - name: "Github pages"
@@ -17,17 +25,9 @@ matrix:
                 # - "3.7" travis doesn't support this yet
           install: make deps
           script: make travis-test
-          branches:
-              only:
-                  - master
-                  - next-major
-                  - next-minor
-                  - next-patch
-                  - tmp
           addons:
               apt_packages:
                   - pandoc
           env:
-              global:
-                  - languages=python,shell
-                  - BYEXAMPLE_CACHE_DISABLED=0
+              - languages=python,shell
+              - BYEXAMPLE_CACHE_DISABLED=0
