@@ -6,6 +6,14 @@ branches:
         - next-patch
         - tmp
 
+env:
+    global:
+      - languages=python,shell
+      - BYEXAMPLE_CACHE_DISABLED=0
+
+install: make deps
+script: make travis-test
+
 matrix:
     include:
         - name: "Github pages"
@@ -18,24 +26,14 @@ matrix:
             - "bundle install && cd docs && bundle exec jekyll build"
         - language: python
           python: "2.7"
-          install: make deps
-          script: make travis-test
           addons:
               apt_packages:
                   - pandoc
-          env:
-              - languages=python,shell
-              - BYEXAMPLE_CACHE_DISABLED=0
         - language: python
           python: "3.4"
-          install: make deps
-          script: make travis-test
           addons:
               apt_packages:
                   - pandoc
-          env:
-              - languages=python,shell
-              - BYEXAMPLE_CACHE_DISABLED=0
 
 #- "3.4"
 #- "3.5"
