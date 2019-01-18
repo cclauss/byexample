@@ -17,12 +17,7 @@ matrix:
             - 'echo -e ''source "https://rubygems.org"\ngem "github-pages"'' > Gemfile'
             - "bundle install && cd docs && bundle exec jekyll build"
         - language: python
-          python:
-              - "2.7"
-              - "3.4"
-              - "3.5"
-              - "3.6"
-                # - "3.7" travis doesn't support this yet
+          python: "2.7"
           install: make deps
           script: make travis-test
           addons:
@@ -31,3 +26,18 @@ matrix:
           env:
               - languages=python,shell
               - BYEXAMPLE_CACHE_DISABLED=0
+        - language: python
+          python: "3.4"
+          install: make deps
+          script: make travis-test
+          addons:
+              apt_packages:
+                  - pandoc
+          env:
+              - languages=python,shell
+              - BYEXAMPLE_CACHE_DISABLED=0
+
+#- "3.4"
+#- "3.5"
+#- "3.6"
+# - "3.7" travis doesn't support this yet
