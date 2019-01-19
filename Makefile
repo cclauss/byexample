@@ -50,7 +50,7 @@ travis-test: clean_test lib-test modules-test docs-test examples-test
 	@make -s clean_test
 
 travis-ruby-test: clean_test
-	@$(python_bin) test/r.py -j $(jobs) --pretty $(pretty) --ff -l ruby,shell docs/languages/ruby/* byexample/modules/ruby.py
+	@$(python_bin) test/r.py -j $(jobs) --pretty $(pretty) --ff -l ruby,shell docs/languages/ruby.md byexample/modules/ruby.py
 
 coverage: clean_test
 	@cp test/r.py .
