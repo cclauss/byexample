@@ -39,9 +39,8 @@ matrix:
           python: "3.6"
           env:
             - languages=python,shell
-        - language: python
-          python: "3.7"
-          env:
-            - languages=python,shell
+        - language: ruby
+          rvm: "2.3"
+          script: make travis-ruby-test
 
-# - "3.7" travis doesn't support this yet
+# python: "3.7" travis doesn't support this yet
