@@ -40,7 +40,8 @@ matrix:
           env:
             - languages=python,shell
         - language: ruby
-          rvm: "2.3"
+          rvm: "2.6"
+          install: sudo make deps
           script: make travis-ruby-test
 
 # python: "3.7" travis doesn't support this yet
