@@ -8,7 +8,6 @@ branches:
 
 env:
     global:
-      - languages=python,shell
       - BYEXAMPLE_CACHE_DISABLED=0
 
 install: make deps
@@ -26,16 +25,23 @@ matrix:
             - "bundle install && cd docs && bundle exec jekyll build"
         - language: python
           python: "2.7"
-          addons:
-              apt_packages:
-                  - pandoc
+          env:
+            - languages=python,shell
         - language: python
           python: "3.4"
-          addons:
-              apt_packages:
-                  - pandoc
+          env:
+            - languages=python,shell
+        - language: python
+          python: "3.5"
+          env:
+            - languages=python,shell
+        - language: python
+          python: "3.6"
+          env:
+            - languages=python,shell
+        - language: python
+          python: "3.7"
+          env:
+            - languages=python,shell
 
-#- "3.4"
-#- "3.5"
-#- "3.6"
 # - "3.7" travis doesn't support this yet
