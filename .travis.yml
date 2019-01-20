@@ -40,6 +40,24 @@ matrix:
           env:
             - languages=python,shell
         - language: ruby
+          rvm: "2.0"
+          script: make travis-ruby-test
+        - language: ruby
+          rvm: "2.1"
+          script: make travis-ruby-test
+        - language: ruby
+          rvm: "2.2"
+          script: make travis-ruby-test
+        - language: ruby
+          rvm: "2.3"
+          script: make travis-ruby-test
+        - language: ruby
+          rvm: "2.4"
+          script: make travis-ruby-test
+        - language: ruby
+          rvm: "2.5"
+          script: make travis-ruby-test
+        - language: ruby
           rvm: "2.6"
           install: sudo make deps
           script: make travis-ruby-test
