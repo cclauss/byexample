@@ -41,21 +41,27 @@ matrix:
             - languages=python,shell
         - language: ruby
           rvm: "2.0"
+          install: sudo make deps
           script: make travis-ruby-test
         - language: ruby
           rvm: "2.1"
+          install: sudo make deps
           script: make travis-ruby-test
         - language: ruby
           rvm: "2.2"
+          install: sudo make deps
           script: make travis-ruby-test
         - language: ruby
           rvm: "2.3"
+          install: sudo make deps
           script: make travis-ruby-test
         - language: ruby
           rvm: "2.4"
+          install: sudo make deps
           script: make travis-ruby-test
         - language: ruby
           rvm: "2.5"
+          install: sudo make deps
           script: make travis-ruby-test
         - language: ruby
           rvm: "2.6"
